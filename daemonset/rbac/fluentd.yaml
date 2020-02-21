@@ -108,6 +108,18 @@ spec:
           #- operator: "Exists"
           - effect: "NoSchedule"
             key: "node-role.kubernetes.io/master"
+          - key: instancegroup
+            operator: Equal
+            value: blockchain
+            effect: NoSchedule
+          - key: instancegroup
+            operator: Equal
+            value: marketmakter
+            effect: NoSchedule
+          - key: instancegroup
+            operator: Equal
+            value: marketmaker
+            effect: NoSchedule
 
 ---
 apiVersion: v1
