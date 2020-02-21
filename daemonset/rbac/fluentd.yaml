@@ -93,6 +93,14 @@ spec:
             secretKeyRef:
               name: sumologic
               key: collector-url
+        - name: KUBERNETES_META
+          value: "false"
+        - name: LOG_FORMAT
+          value: "text"
+        - name: SOURCE_HOST
+          value: "%{source_host}"
+        - name: EXCLUDE_NAMESPACE_REGEX
+          value: "kube-system"
         # Improve GC for memory limited envs like docker.
         - name: RUBY_GC_HEAP_OLDOBJECT_LIMIT_FACTOR
           value: "0.9"
